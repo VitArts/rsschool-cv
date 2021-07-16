@@ -1,5 +1,4 @@
 ## CV
-
 ### Name: 
 Vitaliy Baybakov - VitArts
 
