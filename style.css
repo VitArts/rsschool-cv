@@ -594,3 +594,29 @@ img {
     padding: 1rem 1.5rem;
 		border-radius: 16px;
 }
+
+
+/* -----------------------------------------------------------------
+    - Header
+----------------------------------------------------------------- */
+header {
+  margin-bottom: 1.5rem;
+  padding: 1rem 2rem !important;
+}
+
+
+header .nav-link {
+  color: #44566c !important;
+  font-weight: 600;
+  padding: 0rem 2rem !important;
+  font-size: 1rem;
+}
+
+header .navbar-nav {
+   -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+header .navbar-nav li:nth-child(1) a {
+  padding-left: 0 !important;
+}
