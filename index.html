@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CV - VitArts</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <body class="bg">
@@ -59,26 +61,31 @@
 			<div class="col-12 col-md-12 col-xl-9">
 				<header class="shadow box">
 					<div class="navbar-collapse">
+						<nav>
 						<ul class="navbar-nav">
 							<li class="nav-item">
 								<a class="nav-link" target="_blank" href="https://vitarts.ru/">Main</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" target="_blank" href="https://vitarts.ru/portfolio/">Portfolio</a>
+								<a class="nav-link"  href="#about">About Me</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" target="_blank" href="https://vitarts.ru/about.html">About Me</a>
+								<a class="nav-link"  href="#education">Education</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" target="_blank" href="https://vitarts.ru/contacts.html">Contact</a>
+								<a class="nav-link"  href="#code">Code</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link"  href="#portfolio">Portfolio</a>
 							</li>
 						</ul>
+					</nav>
 					</div>
 				</header>
 				<main>
 					<div class="box shadow pb-0">
 						<!-- About -->
-						<section class="about">
+						<section id="about" class="about">
 							<div class="pb-0 pb-sm-2">
 								<h1 class="title title--h1 first-title title__separate">About Me</h1>
 								<p>My name is Vitaly Baibakov I am a web developer, I develop websites on different management systems.
@@ -87,7 +94,7 @@
 						</section>
 
 						<!-- What -->
-						<section class="what">
+						<section id="education" class="what">
 							<div class="box-inner pb-0">
 								<h2 class="title title--h3">Education </h2>
 								<div class="row">
@@ -95,7 +102,7 @@
 									<!-- Case Item -->
 									<div class="col-12 col-lg-6">
 										<div class="case-item box box__second">
-											<i class="bi bi-book"></i>
+											<i class="bi bi-bookmark-check"></i>
 											<div>
 												<h3 class="title title--h5">Universit</h3>
 												<p class="case-item__caption">Information systems and computer technologies - Russian New
@@ -108,10 +115,10 @@
 									<!-- Case Item -->
 									<div class="col-12 col-lg-6">
 										<div class="case-item box box__second">
-											<i class="bi bi-book-half"></i>
+											<i class="bi bi-bookmark-heart"></i>
 											<div>
 												<h3 class="title title--h5">Сourses</h3>
-												<p class="case-item__caption">HtmlAcademy, Hexlet, Udemy </p>
+												<p class="case-item__caption">HtmlAcademy, Hexlet, <br> Udemy, RS School </p>
 											</div>
 										</div>
 									</div>
@@ -121,23 +128,109 @@
 						</section>
 
 						<!-- Other -->
-						<section class="other">
+						<section id="code" class="other">
 							<div class="box-other pb-sm-2">
 								<h3 class="title title--h4">Code example </h3>
-								<p class="code"><code>
-										const solution = (str) => { <br>
-										let result = ''; <br>
-										for (let i = 0; i &lt; length(str); i +=1) { <br>
-										if (str[i] !== ' ' && (str[i - 1] === ' ' || i === 0 )) { <br>
-										result += toUpperCase(str[i]); <br>
-										} else { <br>
-										result += str[i]; <br>
-										} <br>
-										} <br>
-										return result; <br>
-										} <br>
-										export default solution;
-									</code> </p>
+								<pre><code>function toReadable(number) {
+
+let string = number.toString(),
+result = (number / 100).toFixed(2),
+units,
+tens,
+scales
+
+result = (result + "").split(".")
+result = Number(result[1])
+
+units = ['','one','two','three','four','five','six','seven','eight','nine','ten',
+'eleven','twelve','thirteen''fourteen','fifteen','sixteen','seventeen','eighteen','nineteen']
+
+tens = ['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety']
+
+scales = ['','','','hundred','thousand']
+
+// Проверяем ноль
+if (string === '0') {
+return 'zero'
+}
+
+// Проверяем от 1 до 19
+if (string.length <= 2 && result <=19) { 
+result=units[number]
+} 
+
+// Проверяем до 99 
+if (string.length==2 && result>= 19) {
+result = `${tens[string[0]]} ${units[string[1]]}`
+}
+
+// Проверяем до 999
+if (string.length > 2 && result <= 19) {
+result=`${units[string[0]]} ${scales[string.length]} ${units[result]}` 
+} 
+
+if (string.length> 2 && result > 19) {
+result = `${units[string[0]]} ${scales[string.length]} ${tens[string[string.length - 2]]}
+${units[string[string.length - 1]]}`
+}
+
+return result.trimEnd()
+}	</code></pre> 
+					
+							</div>
+						</section>
+
+						<section id="portfolio" class="what">
+							<div class="box-inner pb-0">
+								<h2 class="title title--h3">Portfolio </h2>
+								<div class="row">
+
+										<!-- Case Item -->
+										<div class="col-12 col-lg-4 col-md-4">
+											<div class="case-item-portfolio box-port box__second">
+												<a href="https://popechataem.ru/" target="_blank"><figure><img src="img/3.jpg" alt="Popechataem"> </figure> </a>
+												<div>
+													<h3 class="title title--h5"><a href="https://popechataem.ru/" target="_blank">Popechataem</a></h3>
+													<p class="case-item__caption">Online Printing
+													</p>
+												</div>
+											</div>
+										</div>
+
+									<!-- Case Item -->
+									<div class="col-12 col-lg-4 col-md-4">
+										<div class="case-item-portfolio box-port box__second">
+											<a href="https://blaq.ru/" target="_blank">	<figure>	<img src="img/1.jpg" alt="Blaq"> </figure>  </a> 
+											<div>
+												<h3 class="title title--h5"><a href="https://blaq.ru/" target="_blank">	Blaq </a>	</h3>
+												<p class="case-item__caption">Chauffeur Service
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- Case Item -->
+									<div class="col-12 col-lg-4 col-md-4">
+										<div class="case-item-portfolio box-port box__second">
+											<a href="https://msocks.ru/" target="_blank">	<figure>	<img src="img/2.jpg" alt="Msocks"> </figure> </a>
+											<div>
+												<h3 class="title title--h5"><a href="https://msocks.ru/" target="_blank">Msocks </a>	</h3>
+												<p class="case-item__caption">Online Shop
+												</p>
+											</div>
+										</div>
+									</div>
+
+								
+
+								</div>
+							</div>
+						</section>
+
+						<section id="code" class="other">
+							<div class="box-other pb-sm-2">
+							
+							
 								<h3 class="title title--h4">Skills</h3>
 								<ul>
 									<li>HTML</li>

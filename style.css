@@ -1,6 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,500,500i,600,600i,700,700i&display=swap");
+@import url("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css");
 
 
 /* -----------------------------------------------------------------
@@ -269,6 +270,10 @@ img {
     padding-top: 1.5rem;
     padding-bottom: 1.25rem;
   }
+
+  .case-item i {
+    margin-right: 0rem !important;
+}
 }
 .sidebar .btn {
   width: 100%;
@@ -316,6 +321,7 @@ img {
   .contacts-block {
     font-size: 1rem;
   }
+ 
 }
 .contacts-block__item {
   display: flex;
@@ -340,14 +346,23 @@ img {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.25rem;
+    text-align: left;
   }
+  .navbar-collapse .navbar-nav {
+    flex-direction: column;
+  }
+
+  .navbar-collapse .nav-link {
+    padding-left: 0rem !important;
+  }
+
 }
 .contacts-block__item a {
   color: #44566C;
   text-decoration: none;
 }
 .contacts-block__item a:hover {
-	color: #3734d2;
+	color: #5aa0ec;
 }
 .contacts-block .font-icon {
   font-size: 1.125rem;
@@ -389,6 +404,7 @@ img {
   .box__second {
     border-radius: 16px;
   }
+
 }
 
 .box-inner {
@@ -562,14 +578,15 @@ img {
   color: #8697A8;
   font-size: 1rem;
   padding-top: 1rem;
+}
+
+.footer p {
   text-align: center;
-	position: relative;
 }
 
 .footer .rs-logo {
 	width: 4rem;
-    position: absolute;
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 @media only screen and (max-width: 580px) {
   .footer {
@@ -589,10 +606,11 @@ img {
 	padding-top: 2rem;
 }
 
-.code {
-	  background: #f2f2fd;
-    padding: 1rem 1.5rem;
-		border-radius: 16px;
+
+.hljs {
+  background: #f2f2fd;
+  border-radius: 1rem;
+  padding: 2rem;
 }
 
 
@@ -619,4 +637,27 @@ header .navbar-nav {
 
 header .navbar-nav li:nth-child(1) a {
   padding-left: 0 !important;
+}
+
+/* -----------------------------------------------------------------
+    - Portfolio
+----------------------------------------------------------------- */
+.case-item-portfolio {
+  margin-bottom: 2rem;
+}
+
+.case-item-portfolio figure{
+  margin: 0rem;
+}
+
+.case-item-portfolio.box-port div {
+  padding: .5rem 2rem 1.5rem 2rem;
+}
+
+.case-item-portfolio img {
+  border-radius: .5rem;
+}
+
+.case-item-portfolio h3 {
+  padding-top: 1rem;
 }
