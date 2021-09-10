@@ -155,7 +155,7 @@ return 'zero'
 }
 
 // Проверяем от 1 до 19
-if (string.length <= 2 && result <=19) { 
+if (string.length &lt;= 2 && result &lt;=19) { 
 result=units[number]
 } 
 
@@ -165,7 +165,7 @@ result = `${tens[string[0]]} ${units[string[1]]}`
 }
 
 // Проверяем до 999
-if (string.length > 2 && result <= 19) {
+if (string.length > 2 && result &lt;= 19) {
 result=`${units[string[0]]} ${scales[string.length]} ${units[result]}` 
 } 
 
@@ -227,7 +227,7 @@ return result.trimEnd()
 							</div>
 						</section>
 
-						<section id="code" class="other">
+						<section class="other">
 							<div class="box-other pb-sm-2">
 							
 							
